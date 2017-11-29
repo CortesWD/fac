@@ -3,7 +3,7 @@ extends ../templates/base.pug
 
 //-Etiqueta Title
 block title
-	title Ejemplo de meta title
+	title Intranet FAC
 
 //-Etiqueta Metadescription
 block description
@@ -11,6 +11,65 @@ block description
 
 
 block content
+	//Seccion noticias
+	
+	section.container-fluid
+		div.row
+
+			article.col-sm-6.noticia.noticia-grande
+				div.noticia-container
+					//Noticia
+					//overlay
+					div.overlay
+						h3.overlay-titulo.
+							Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
+						
+						a.btn.btn-more(href="#") Noticia
+
+					///-overlay
+					+image('content/sample-noticia.jpg', 'Una Noticia')
+
+					///-Noticia
+
+			article.col-sm-6.noticia
+				-for(x=0; x < 2; x++)
+					div.col-sm-6
+						div.noticia-container.noticia-cuadrado
+							//Noticia
+							//overlay
+							div.overlay
+								h3.overlay-titulo.
+									Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
+								
+								a.btn.btn-more(href="#") Noticia
+
+							///-overlay
+							+image('content/sample-noticia.jpg', 'Una Noticia')
+
+							///-Noticia
+
+
+				div.clearfix
+				
+				div.noticia-container.noticia-horizontal
+						//Noticia
+						div.noticia
+							//overlay
+							div.overlay
+								h3.overlay-titulo.
+									Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
+								
+								a.btn.btn-more(href="#") Noticia
+
+							///-overlay
+							+image('content/sample-noticia.jpg', 'Una Noticia')
+
+						///-Noticia
+
+				
+	
+	///-Seccion noticias
+
 
 
 	

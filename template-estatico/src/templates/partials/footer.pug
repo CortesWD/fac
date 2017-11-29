@@ -1,9 +1,28 @@
 //Footer
+footer
+	//Menu footer
+	div.row.bg-blue
+		ul.col-sm-4.col-sm-offset-4.menu-footer
+			li
+				a(href="#") Mi Intranet
+			li
+				a(href="#") Maps
+			li
+				a(href="#") Sugerencias
 
-footer.container-fluid
-	div.row
-		div.col-lg-12
-			h5.block-center.text-center Footer Content
+			li
+				a(href="#") Contactenos
+
+	///-Menu footer
+	div.container-fluid
+		//Legal
+		div.row
+			div.col-sm-4.col-sm-offset-4
+				p.text-center.
+					Intranet FAC 
+					Cra 53 CAN. Bogotá D.C., Colombia Telefono: Conmutador (57)(1) 315 9800
+					Webmaster: <a href="mailto:intranetfac@fac.mil.co" target="_blank">intranetfac@fac.mil.co</a>
+		///-Legal
 
 
 ///-Footer
@@ -15,9 +34,10 @@ if debug == true
 	//-Este arreglo imprime todos los js que se declaren en arreglo jsLibs en gulpfile.js:70
 	-for(x =0; x < libs.length; x++)
 		script(src=libs[x])
-	script(type="text/javascript", src="js/pts-co.init.js")
+	script(src='js/intranet-fac.init.js')
 
 
 else
 	script(src='js/libs/jquery.js')
 	script(src="js/libs.min.js")
+	script(src='js/intranet-fac.init.js')

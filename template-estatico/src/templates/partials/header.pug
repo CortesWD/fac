@@ -1,10 +1,47 @@
 //Header
 header.container-fluid
 	div.row
-		div.col-lg-5.col-md-5.col-sm-5.col-xs-12.col-lg-offset-1.col-md-offset-1.col-sm-offset-1
-			img.img-responsive(src="", alt="BRM")
+		//Button toggle
+		div.btn-menu.col-sm-1
+			a.btn.btn-toggle(href="#" role="button")
+				i.icon.icon-nav
+		///-Button toggle
+		
+		//Logo FAC
+		div.col-sm-8.col-sm-offset-1.content-text
+			div.col-sm-3
+				+image('logo-fac.png', 'Fuerza Aérea Colombiana')(class="img-responsive")
+			
+			div.col-sm-3
+				h1.text-center Intranet FAC
 
-		div.col-lg-5.col-md-5.col-sm-5.col-xs-12
-			include menu.pug
+			div.col-sm-2.aguila
+				+image('layout/aguila-header.png', 'Fuerza Aérea Colombiana')(class="img-responsive")
+			div.col-sm-4
+
+				p.text-center.
+					Republica de Colombia<br />
+					Ministerio de Defensa Nacional
+
+		///-Logo FAC
+		
+		//Buscador y fecha
+		div.col-sm-3
+			
+			div.container-buscador
+				form#form-buscar
+
+					div.form-group
+						input.form-control(type="search", placeholder="Buscar")
+						button.fa.fa-search(type="button")
+
+
+
+			div.fecha
+				p.text-right Jueves, 05 de noviembre de 2017 - 13:45
+
+		///-Buscador y fecha
+
+
 
 ///-Header

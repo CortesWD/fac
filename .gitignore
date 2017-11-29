@@ -3,6 +3,8 @@ sites/*/settings.php
 sites/example.sites.php
 .DS_Store
 */.DS_Store
+*/maps
+maps
 node_modules
 */node_modules
 # Ignore paths that contain generated content.

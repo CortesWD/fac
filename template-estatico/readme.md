@@ -35,7 +35,7 @@ Se crea  http://localhost:3000/ donde podrá ver el corte, css y js que va gener
 
 
 ```
-npm run finalizar
+npm run build
 ```
 
 Genera archivos compilados y el html con los respectivos archivos vinculados
@@ -50,7 +50,7 @@ Escucha únicamente archivos de JS:ES6, los compila a ES4 y los minifica
 
 ### Secundarias / individuales
 
-Estas mismas tareas se corren al ejecutar las tareas `npm start`, `npm run finalizar` y `npm run js:watch` 
+Estas mismas tareas se corren al ejecutar las tareas `npm start`, `npm run build` y `npm run js:watch` 
 
 
 ```

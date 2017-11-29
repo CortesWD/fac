@@ -1,120 +1,34 @@
 .menu
-	centrarAb()
-	color #fff
-	cuadrado(100%)
-	opacity 0
-	overflow hidden
-	pointer-events none
-	position fixed
-	text-align center
-	z-index 3000
-	
-	&::before
-		animation 0.8s ease-out reverse backwards paused
-		border-radius 100%
-		content ''
-		display block
-		gradient-horizontal($azul, $magenta, 0,100%)
-		height 0
-		overflow hidden
-		padding-bottom 100%
-		pointer-events none
-		transform scale(0.04) translateY(99999rem)
-		width @padding-bottom
-		
-	
-	
-	.container-menu
-		backface-visibility hidden
-		color #fff
-		left 50%
-		min-width 30rem
-		perspective 1000
+	&-container
+		background-color $gris
+		color white
+		height 100%
+		left -17.4rem
+		padding 3rem 0
 		position fixed
-		top @left
-		transform translate3d(-50%, -50%, 0)
+		top 9rem
+		transitionBase()
+		width abs(@left)
+		z-index 20
 		
-
-		img
-			img-responsive(block)
-			margin 1rem auto
-			max-width 8rem
-			opacity 0
-			transitionBase()
-			width 100%
+		&.active
+			left 0
 		
-		ul
-			list-style-type none
-			padding 0
-			
+	&-nav
+		list-style-type none
+		padding 0
 		
-			li
-				border-bottom 1px solid white
-				margin 0rem 0
-				opacity 0
-				text-align center
-				transform translate3d(0, 36px, 0)
-					
-				&:nth-of-type(1)
-					border-top 1px solid white
-				
-				a
-					color #fff
-					display block
-					font-size 2rem
-					padding 1rem
-					
-					&:hover
-						// color $Amarillo
-						text-decoration none
-			
-		.btn
-			opacity 0
-			&:active,		
-			&:hover,		
-			&:focus
-				outline 0 !important		
-				outline none !important
-				
-
-		.icon
+		a
+			background-color #fff
+			color $gris
 			display block
-			margin 0 auto
+			font-weight $bold
+			padding 1rem 2rem
+			text-transform uppercase
+			transitionBase()
 			
-	&.active
-		opacity 0.99
-		pointer-events all
-		
-		&::before
-			animation-direction normal
-			animation-fill-mode forwards
-			animation-name menu-animation
-			animation-play-state running
-			
+			&:hover
+				background-color $azul
+				color white
+				text-decoration none
 
-			
-
-		.container-menu
-			img,
-			.btn
-				opacity 0.99
-				transition-delay 1.5s
-				
-			li
-				opacity 1
-				transform translate3d(0,0,0)
-				transition transform 0.2s ease-out, opacity 0.2s ease-out
-				
-
-				
-				&:nth-child(1)
-					transition-delay 0.75s
-					
-				&:nth-child(2)
-					transition-delay 0.85s
-					
-				&:nth-child(3)
-					transition-delay 0.95s
-					
-				&:nth-child(4)
-					transition-delay 1.05s
