@@ -11,9 +11,19 @@ block description
 
 
 block content
+	//slider
+	section.container-fluid.container-slider
+		
+		div#slider-home.slider
+			
+			-for(x=0; x < 3; x++)
+				div.item
+					+image('slider/img-slide-demo.jpg', 'Demo Slider')
+
+	///-slider
 	//Seccion noticias
 	
-	section.container-fluid
+	section.container-fluid.bg-gris
 		div.row
 
 			article.col-sm-6.noticia.noticia-grande
@@ -21,8 +31,9 @@ block content
 					//Noticia
 					//overlay
 					div.overlay
-						h3.overlay-titulo.
-							Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
+						h3.overlay-titulo
+							a(href="#").
+								Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
 						
 						a.btn.btn-more(href="#") Noticia
 
@@ -38,8 +49,9 @@ block content
 							//Noticia
 							//overlay
 							div.overlay
-								h3.overlay-titulo.
-									Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
+								h3.overlay-titulo
+									a(href="#").
+										Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
 								
 								a.btn.btn-more(href="#") Noticia
 
@@ -56,8 +68,9 @@ block content
 						div.noticia
 							//overlay
 							div.overlay
-								h3.overlay-titulo.
-									Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
+								h3.overlay-titulo
+									a(href="#").
+										Fuerza Aérea Colombiana realiza evacuación aeromédica en el departamento de Caldas
 								
 								a.btn.btn-more(href="#") Noticia
 
@@ -69,8 +82,83 @@ block content
 				
 	
 	///-Seccion noticias
+	//Seccion destacados
+	section.container-fluid
+		div.row
+			h2.title-section destacados
+			
+			//Destacados
+			div.col-sm-8
+				-for(y=1; y <= 6; y ++)
+					//Item
+					div.col-sm-4
+						
+						div.destacado
+							a(href="#"): +image('content/demo-destacado.jpg', 'titulo de noticia')
+							
+							h3.destacado-title
+								a(href="#") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui iure natus saepe voluptates nostrum vel inventore, velit, doloribus beatae dolores voluptatum autem quia tenetur dolorum eos quas nisi aut quisquam!
+
+							p.destacado-fecha.text-right 23 de noviembre de 2017
+		
+					///-Item
+
+					-if(y % 3 === 0 )
+						div.clearfix
 
 
+
+			///-Destacados
+
+			//Sidebar
+			div.col-sm-4
+				div.banner
+					a(href="#"): +image('ads/banner-doctrina.jpg', 'Conocimiento al servicio de la fuerza')(class="img-responsive")
+
+				//Magazine
+				div.revista
+					div.revista-text
+						h3: a(href="#") Revista taktika
+						p año 7 No. 13
+
+						a.btn.btn-more(href="#") Galería de revistas
+					a(href="#"): +image('content/demo-revista.jpg', 'Revista #000')
+				///-Magazine
+
+			///-Sidebar
+
+	///-Seccion destacados
+
+	//Videos
+	section.container-fluid.bg-blue
+		div.row
+			h2.title-section destacados
+			//slider videos
+			div.col-sm-8
+
+				div#slider-videos.slider
+
+					-for(z=0; z< 3; z++)
+
+						div.item
+							div.item-text
+								p: i.fa.fa-play-circle-o
+								
+								p: a(href="#") Especial 
+
+							a(href="#"): +image('content/demo-video.jpg', 'demo video')
+
+			///-slider videos
+
+			div.col-sm-4
+				
+
+	///-Videos
+
+
+	//redes sociales 
+	section.container-fluid.bg-gris
+	///-redes sociales 
 
 	
 	

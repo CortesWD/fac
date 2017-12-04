@@ -1,3 +1,39 @@
+.destacado
+	img
+		img-responsive(block)
+		margin 1rem auto
+		width 100%
+		
+	&-fecha
+		font-weight $light
+	&-title
+		box-orient vertical
+		-moz-box-orient vertical
+		-ms-box-orient vertical
+		-o-box-orient vertical
+		-webkit-box-orient vertical
+		display block
+		display -webkit-box
+		display -moz-box
+		display -ms-box
+		display -o-box
+		font-size 1.6rem
+		height 5rem
+		line-clamp 3
+		-moz-line-clamp 3
+		-ms-line-clamp 3
+		-o-line-clamp 3
+		-webkit-line-clamp 3
+		line-height 1.1
+		margin 1rem auto
+		overlow hidden
+		text-overflow ellipsis
+		white-space normal
+		
+		a
+			color $gris
+			padding 0
+
 .noticia
 	h2,
 	h3
@@ -16,11 +52,12 @@
 		position relative
 	
 	&-horizontal
-		height 23.2rem
+		height 0
 		margin 0
+		padding-bottom 38.9%
 		
 		img
-			height 23.2rem
+			height 23.7rem
 	
 	.btn
 		background-color $rojo
@@ -56,3 +93,66 @@
 		padding 1rem
 		position absolute
 		width 100%
+		
+		a
+			color white
+			
+.revista
+	margin 1rem auto
+	position relative
+	
+	img
+		img-responsive(block)
+		position relative
+		width 100%
+		z-index 1
+		
+	.btn
+		background-color $rojo
+		border-radius 1rem
+		color white
+		display inline-block
+		margin-left 1rem
+		padding 0.25rem 3rem
+		position relative
+		text-transform none
+		width auto
+		z-index 1
+		
+		&::before
+			background-color white
+			content ''
+			height 1px
+			left -1rem
+			pointer-events none
+			position absolute
+			top 50%
+			transform translateY(-50%)
+			width 2rem
+			z-index 3
+			
+	h3
+		font-size 2rem
+		font-size 5.2rem		
+		line-height 1
+		margin 1rem 0
+		max-width 50%
+		text-transform uppercase
+		
+		a
+			transitionBase()
+			&:hover
+				color white
+				text-decoration none
+		
+	p
+		color white
+		font-size 1.8rem
+		margin 1rem auto
+			
+	&-text
+		bottom 7rem
+		left 4rem
+		position absolute
+		z-index 2
+			

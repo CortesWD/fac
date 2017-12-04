@@ -10,8 +10,8 @@ jQuery(document).ready(function($) {
 		jQuery('section.container-fluid')
 			.toggleClass('push-menu');
 
-		jQuery('body')
-			.toggleClass('hidden-x');
+		// jQuery('body')
+		// 	.toggleClass('hidden-x');
 		jQuery('.menu-container')
 			.toggleClass('active');
 
@@ -25,6 +25,20 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+
+	// Slider home
+
+	const sliderHome = {
+		infinite: true,
+		slidesToShow: 1,
+  		slidesToScroll: 1,
+  		dots: true,
+  		arrows:false
+
+	}
+
+	jQuery('#slider-home').slick(sliderHome);
+	jQuery('#slider-videos').slick(sliderHome);
 
 
 

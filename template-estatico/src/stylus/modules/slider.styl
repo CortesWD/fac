@@ -1,1 +1,61 @@
-// .slider
+// #slider-home
+.slick
+	
+	&-dots
+		list-style-type none
+		margin 1rem auto
+		padding 0
+		text-align center
+		
+		li
+			display inline-block
+			margin 1rem
+			
+			button 
+				background-color $azul
+				border none
+				circ(2.5rem)
+				overflow hidden
+				text-indent -9999px
+				transitionBase()
+				
+				&:active,
+				&:focus
+					outline 0
+					outline none
+			
+			&.slick-active
+				button 
+					background-color $rojo
+	
+#slider-videos
+	
+	.item
+		position relative
+		&-text
+			bottom 3rem
+			color white		
+			left 3rem
+			position absolute
+			
+			a
+				color white
+				
+			p
+				font-size 1.8rem
+			.fa
+				font-size 6rem
+				
+	.slick-dots
+		li
+			button
+				background-color #fff
+				
+			&.slick-active
+				button
+					background-color $amarillo
+
+.slider
+	img
+		img-responsive(block)
+		width 100%
