@@ -1,0 +1,16 @@
+//Sistemas de información
+aside.container-fluid.container-sys-info
+	div.row
+		div.lista-iconos
+			-for(x=0;x < 9; x++)
+				a(href="#", target="_blank"): +image('icons/sial.png', 'uno')
+
+			a.btn-more(href="#", target="_blank")
+				+image('icons/more.png')
+
+			div.lista-horizontal
+				-for(x=0;x < 6; x++)
+					a(href="#", target="_blank"): +image('icons/sial.png', 'uno')
+
+
+///-Sistemas de información

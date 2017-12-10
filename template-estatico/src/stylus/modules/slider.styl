@@ -14,7 +14,7 @@
 			button 
 				background-color $azul
 				border none
-				circ(2.5rem)
+				circ(1.5rem)
 				overflow hidden
 				text-indent -9999px
 				transitionBase()
@@ -28,10 +28,22 @@
 				button 
 					background-color $rojo
 	
+#slider-home
+	.item
+		img
+			object-fit(cover)
+			height 35rem
+	
+
 #slider-videos
 	
 	.item
 		position relative
+		
+		img
+			object-fit(cover)
+			height 35rem
+			
 		&-text
 			bottom 3rem
 			color white		
@@ -45,6 +57,7 @@
 				font-size 1.8rem
 			.fa
 				font-size 6rem
+				
 				
 	.slick-dots
 		li

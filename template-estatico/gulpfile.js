@@ -61,6 +61,7 @@ const baseDir = (debug)?'':routes.app;
 const jsLibs = [
   baseDir + routes.js +'libs/bootstrap.min.js',
   baseDir + routes.js +'libs/slick.js',
+  baseDir + routes.js +'libs/jquery.magnific-popup.min.js',
   baseDir + routes.js +'libs/video.js'
 ];
 

@@ -1,0 +1,28 @@
+.tab-social
+	li
+		max-width 33.3%
+		opacity 0.5
+		transitionBase()
+		
+		a
+			margin-right 0 !important
+			padding-bottom 0 !important
+			transitionBase()
+			
+		&.active
+			opacity 0.99
+
+		img
+			img-resposive(block)
+			width 100%
+			
+		&.tab-fb
+			a
+				background-color $facebook !important
+		&.tab-ins
+			a
+				background-color #435288 !important
+			
+		&.tab-tw
+			a
+				background-color $twitter !important

@@ -7,6 +7,7 @@
 	&-fecha
 		font-weight $light
 	&-title
+		// stylint off
 		box-orient vertical
 		-moz-box-orient vertical
 		-ms-box-orient vertical
@@ -26,15 +27,17 @@
 		-webkit-line-clamp 3
 		line-height 1.1
 		margin 1rem auto
-		overlow hidden
+		overflow hidden
 		text-overflow ellipsis
 		white-space normal
 		
 		a
 			color $gris
 			padding 0
+		// stylint on
 
 .noticia
+	padding 0 1rem
 	h2,
 	h3
 		color white
@@ -44,20 +47,28 @@
 		img-responsive(block)
 		object-fit(cover)
 		width 100%
+	
+	.col-sm-6
+		padding 0 1rem
 		
 	&-container
-		box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
+		// box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
 		margin 1rem auto
 		overflow hidden
 		position relative
 	
 	&-horizontal
+		box-shadow none
 		height 0
 		margin 0
-		padding-bottom 38.9%
+		padding-bottom 40.9%
 		
 		img
 			height 23.7rem
+			
+		.noticia
+			// box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)	
+			padding 1rem
 	
 	.btn
 		background-color $rojo

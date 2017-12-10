@@ -4,6 +4,8 @@ sites/example.sites.php
 .DS_Store
 */.DS_Store
 */maps
+*/**/video
+publication/video
 maps
 node_modules
 */node_modules

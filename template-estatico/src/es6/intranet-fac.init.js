@@ -40,6 +40,15 @@ jQuery(document).ready(function($) {
 	jQuery('#slider-home').slick(sliderHome);
 	jQuery('#slider-videos').slick(sliderHome);
 
+	//Mostrar iconos de aplicaciones
+
+	jQuery('.lista-iconos a.btn-more').click( function (e) {
+		e.preventDefault();
+
+		jQuery('.lista-iconos .lista-horizontal').toggleClass('active');
+
+	} );
+
 
 
 	/*No pasar de aca*/

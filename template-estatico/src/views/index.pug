@@ -132,9 +132,9 @@ block content
 	//Videos
 	section.container-fluid.bg-blue
 		div.row
-			h2.title-section destacados
 			//slider videos
 			div.col-sm-8
+				h2.title-section destacados
 
 				div#slider-videos.slider
 
@@ -151,6 +151,8 @@ block content
 			///-slider videos
 
 			div.col-sm-4
+				div.banner
+					a(href="#"): +image('ads/banner-emisora.jpg', 'Emisora')(class="img-responsive")
 				
 
 	///-Videos
@@ -158,6 +160,42 @@ block content
 
 	//redes sociales 
 	section.container-fluid.bg-gris
+		div.col-sm-8
+			div.banner.banner-2
+				a(href="#"): +image('ads/banner-4.jpg', 'Emisora')(class="img-responsive")
+			
+
+		div.col-sm-4
+			h2.title-section Síguenos
+
+			//Tabs
+			ul.nav.nav-tabs.tab-social(role="tablist")
+				li.active.tab-ins(role="presentation")
+					a(href="#instagram" aria-controls="instagram" role="tab" data-toggle="tab"): +image('layout/tab-instagram.png', 'Instagram')
+
+				li.tab-fb(role="presentation")
+					a(href="#facebook" aria-controls="facebook" role="tab" data-toggle="tab"): +image('layout/tab-facebook.png', 'Facebook')
+
+				li.tab-tw(role="presentation")
+					a(href="#twitter" aria-controls="twitter" role="tab" data-toggle="tab"): +image('layout/tab-twitter.png', 'Twitter')
+			///-Tabs
+
+			//Content tabs
+			div.tab-content
+				div#instragram.tab-pane.active(role="tabpanel")
+					p Instagram
+				
+				div#facebook.tab-pane(role="tabpanel")
+					p Facebook
+
+
+				div#twitter.tab-pane(role="tabpanel")
+					p Twitter
+
+
+
+			///-Content tabs
+
 	///-redes sociales 
 
 	

@@ -1,5 +1,8 @@
 // @stylint off
 
+ aspect-ratio(w,h)
+ 	(h/w) * 100%
+
 //path images
 path(img)
 	background-image url("../images/"+img)
@@ -21,7 +24,6 @@ background-blend-mode(arguments)
 	-webkit-background-blend-mode arguments
 	-moz-background-blend-mode arguments
 	-o-background-blend-mode arguments
-	-ms-background-blend-mode arguments
 	
 
 mix-blend-mode(arguments)
@@ -29,14 +31,13 @@ mix-blend-mode(arguments)
 	-webkit-mix-blend-mode arguments
 	-moz-mix-blend-mode arguments
 	-o-mix-blend-mode arguments
-	-ms-mix-blend-mode arguments
-
+	
 object-fit(arguments)
 	object-fit arguments
 	-webkit-object-fit arguments
 	-moz-object-fit arguments
-	-o-object-fit arguments
 	-ms-object-fit arguments
+	-o-object-fit arguments
 
 //Soporte de propiedad calc en todos los navegadores modernos
 calc()
