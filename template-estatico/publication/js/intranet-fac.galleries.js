@@ -1,1 +1,19 @@
-"use strict";jQuery(document).ready(function(){jQuery(".content-gallery").each(function(){jQuery(this).magnificPopup({type:"image",delegate:"a",gallery:{enabled:!0}})})});
+'use strict';
+
+jQuery(document).ready(function () {
+
+	var $containerGall = jQuery('.content-gallery');
+
+	$containerGall.each(function () {
+
+		jQuery(this).magnificPopup({
+			type: 'image',
+			delegate: 'a',
+			gallery: {
+				enabled: true
+			}
+
+		});
+	});
+});
+//# sourceMappingURL=../maps/intranet-fac.galleries.js.map
