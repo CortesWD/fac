@@ -50,6 +50,39 @@ jQuery(document).ready(function($) {
 	} );
 
 
+	//Ocultar overlay onplay
+
+
+	jQuery(document).on('click', '.vjs-big-play-button', function () {
+		// body...
+		console.log('le di play');
+
+		jQuery(this)
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			// .parent()
+			.find('.item-text').fadeOut();
+	});
+
+	//Pausamos todos los videos al navegar slider
+	jQuery('#slider-videos').on('afterChange', (event, slick, currentSlide, nextSlide)=>{
+		
+		jQuery('.video-js').each(function() {
+			
+			videojs(this.id).ready(function(){
+				let player = this;
+
+				player.pause();
+
+			});
+
+		});
+
+
+	});
+
 
 	/*No pasar de aca*/
 });

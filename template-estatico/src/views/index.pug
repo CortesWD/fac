@@ -83,7 +83,7 @@ block content
 	
 	///-Seccion noticias
 	//Seccion destacados
-	section.container-fluid
+	section.container-fluid.container-destacados-home
 		div.row
 			h2.title-section destacados
 			
@@ -130,11 +130,11 @@ block content
 	///-Seccion destacados
 
 	//Videos
-	section.container-fluid.bg-blue
+	section.container-fluid.bg-blue.container-video-home
 		div.row
 			//slider videos
-			div.col-sm-8
-				h2.title-section destacados
+			h2.title-section destacados
+			div.col-sm-7
 
 				div#slider-videos.slider
 
@@ -142,17 +142,19 @@ block content
 
 						div.item
 							div.item-text
-								p: i.fa.fa-play-circle-o
 								
 								p: a(href="#") Especial 
 
-							a(href="#"): +image('content/demo-video.jpg', 'demo video')
+							div.multimedia
+								div.embed-responsive.embed-responsive-16by9
+									video.embed-responsive-item.slider-video.video-js(width="720", height="480", data-setup='{"controls":true, "autoplay":false,"preload": "auto"}')
+										source(src="video/demo.mp4", type="video/mp4" )
 
 			///-slider videos
 
-			div.col-sm-4
+			div.col-sm-5
 				div.banner.banner-emisora
-					a(href="#"): +image('ads/banner-emisora.jpg', 'Emisora')(class="img-responsive")
+					a(href="#"): +image('ads/banner-doctrina.jpg', 'Emisora')(class="img-responsive")
 				
 
 	///-Videos
@@ -166,7 +168,7 @@ block content
 			
 
 		div.col-sm-4
-			h2.title-section Síguenos
+			h2.title-section.title-follow Síguenos
 
 			//Tabs
 			ul.nav.nav-tabs.tab-social(role="tablist")

@@ -8,13 +8,9 @@
   <meta name="description" content="Description">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/p-video-js.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/intranet-fac.min.css">
   <!-- Web Fonts-->
-  <link link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet"><!--[if lt IE]>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Titillium+Web:400,700" rel="stylesheet"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
@@ -147,7 +143,7 @@
   </section>
   <!--/-Seccion noticias-->
   <!--Seccion destacados-->
-  <section class="container-fluid">
+  <section class="container-fluid container-destacados-home">
     <div class="row">
       <h2 class="title-section">destacados</h2>
       <!--Destacados-->
@@ -221,35 +217,53 @@
   </section>
   <!--/-Seccion destacados-->
   <!--Videos-->
-  <section class="container-fluid bg-blue">
+  <section class="container-fluid bg-blue container-video-home">
     <div class="row">
       <!--slider videos-->
-      <div class="col-sm-8">
-        <h2 class="title-section">destacados</h2>
+      <h2 class="title-section">destacados</h2>
+      <div class="col-sm-7">
         <div class="slider" id="slider-videos">
           <div class="item">
             <div class="item-text">
-              <p><i class="fa fa-play-circle-o"></i></p>
               <p><a href="#">Especial </a></p>
-            </div><a href="#"><img src="images/content/demo-video.jpg" title="demo video" alt="demo video"/></a>
+            </div>
+            <div class="multimedia">
+              <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item slider-video video-js" width="720" height="480" data-setup="{&quot;controls&quot;:true, &quot;autoplay&quot;:false,&quot;preload&quot;: &quot;auto&quot;}">
+                  <source src="video/demo.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
           </div>
           <div class="item">
             <div class="item-text">
-              <p><i class="fa fa-play-circle-o"></i></p>
               <p><a href="#">Especial </a></p>
-            </div><a href="#"><img src="images/content/demo-video.jpg" title="demo video" alt="demo video"/></a>
+            </div>
+            <div class="multimedia">
+              <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item slider-video video-js" width="720" height="480" data-setup="{&quot;controls&quot;:true, &quot;autoplay&quot;:false,&quot;preload&quot;: &quot;auto&quot;}">
+                  <source src="video/demo.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
           </div>
           <div class="item">
             <div class="item-text">
-              <p><i class="fa fa-play-circle-o"></i></p>
               <p><a href="#">Especial </a></p>
-            </div><a href="#"><img src="images/content/demo-video.jpg" title="demo video" alt="demo video"/></a>
+            </div>
+            <div class="multimedia">
+              <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item slider-video video-js" width="720" height="480" data-setup="{&quot;controls&quot;:true, &quot;autoplay&quot;:false,&quot;preload&quot;: &quot;auto&quot;}">
+                  <source src="video/demo.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <!--/-slider videos-->
-      <div class="col-sm-4">
-        <div class="banner banner-emisora"><a href="#"><img class="img-responsive" src="images/ads/banner-emisora.jpg" title="Emisora" alt="Emisora"/></a></div>
+      <div class="col-sm-5">
+        <div class="banner banner-emisora"><a href="#"><img class="img-responsive" src="images/ads/banner-doctrina.jpg" title="Emisora" alt="Emisora"/></a></div>
       </div>
     </div>
   </section>
@@ -260,7 +274,7 @@
       <div class="banner banner-2"><a href="#"><img class="img-responsive" src="images/ads/banner-4.jpg" title="Emisora" alt="Emisora"/></a></div>
     </div>
     <div class="col-sm-4">
-      <h2 class="title-section">Síguenos</h2>
+      <h2 class="title-section title-follow">Síguenos</h2>
       <!--Tabs-->
       <ul class="nav nav-tabs tab-social" role="tablist">
         <li class="active tab-ins" role="presentation"><a href="#instagram" aria-controls="instagram" role="tab" data-toggle="tab"><img src="images/layout/tab-instagram.png" title="Instagram" alt="Instagram"/></a></li>
@@ -323,9 +337,6 @@
   <!--/-Footer-->
   <!--Scripts-->
   <script src="js/libs/jquery.js"></script>
-  <script src="js/libs/bootstrap.min.js"></script>
-  <script src="js/libs/slick.js"></script>
-  <script src="js/libs/jquery.magnific-popup.min.js"></script>
-  <script src="js/libs/video.js"></script>
+  <script src="js/libs.min.js"></script>
   <script src="js/intranet-fac.init.js"></script>
 </body></html>
