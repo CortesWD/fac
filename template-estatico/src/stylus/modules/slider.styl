@@ -1,6 +1,20 @@
 // #slider-home
 .slick
 	
+	&-arrow
+		color $azul
+		font-size 2rem
+		position absolute
+		text-decoration none
+		top 50%
+		transform translateY(-@top)
+		
+	&-next
+		right 1rem
+	&-prev
+		left 1rem
+
+		
 	&-dots
 		list-style-type none
 		margin 1rem auto
@@ -78,3 +92,10 @@
 	img
 		img-responsive(block)
 		width 100%
+		
+
+@media (max-width:$screen-sm)
+	#slider-home
+		.item
+			img
+				height 22rem

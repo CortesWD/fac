@@ -1,3 +1,146 @@
+@media (max-width:830px)
+	.container-sys-info
+		.row
+			.lista-iconos
+				a
+					img
+						max-width 2.8rem
+
+@media (max-width:$screen-sm)
+
+	.banner,
+	.revista
+		display none
+		
+	.menu-container
+		box-shadow 5px 0px 5px rgba(0,0,0,0.5) 
+		left -62%
+		top 13.6rem
+		width 60%
+		
+
+	.container-cierre
+		display none
+		padding-bottom 2rem !important
+		padding-top  @padding-bottom
+		
+	.container-fluid
+		padding-left 0.5rem
+		padding-right @padding-left
+		
+	.container-slider
+		padding 0
+	
+	.container-video-home
+		.title-section
+			padding-bottom 2rem
+			padding-top @padding-bottom
+			max-width 100% !important
+			
+	.container-sys-info
+		.btn-more
+			display none !important
+		.row
+			position initial
+			
+			.lista-iconos
+				box-shadow none
+				padding 4rem 0
+				
+				a
+					border none
+					display block
+					
+					img
+						max-width 12rem
+						width 100%
+				
+					&:nth-of-type(1)
+						border-left-color transparent
+					
+			.lista-horizontal
+				box-shadow none
+				min-width auto
+				opacity 0.99
+				display inline
+				position initial 
+				right unset
+				top unset
+				
+				a
+					img
+						display block
+				
+	
+	.destacado
+		clearfix()
+		margin 2rem auto
+		
+		&-content
+			float left
+			max-width 80%
+			padding-left 0.5rem
+		&-img
+			float left
+			max-width 20%
+		&-title
+			display block
+			font-size 1.6rem
+			height auto
+			margin 1rem auto
+			overflow visible
+			text-overflow initial
+			white-space normal
+
+	.noticia
+		
+		.col-sm-6
+			padding 0
+
+		&-container
+			overflow visible
+			margin 3rem auto
+		&-horizontal
+			height auto
+			padding-bottom 0
+			margin 0
+			img
+				height auto
+				
+			.noticia
+				padding 0
+				
+		img
+			object-fit(initial)
+			// position absolute
+			max-width 20%
+		
+		.overlay
+			background-color transparent
+			left 20%
+			padding 0 1rem
+			top 0
+			width 80% !important
+			a
+				color $gris
+
+			h3
+				color $gris
+				margin-top 0
+				
+			.btn
+				color white
+				
+
+	.title-section
+		padding-bottom 2rem
+		padding-top @padding-bottom
+		max-width 100%
+		
+
+// @media (min-width:1280px)
+
+
 @media (min-width:1280px)
 	.noticia
 		h2,
@@ -35,8 +178,3 @@
 	.destacado-title
 		font-size 2.4rem
 		height 8rem
-
-	// .title-section
-	// 	font-size 3.5rem
-	// 	padding-bottom 6rem
-	// 	padding-top 9rem

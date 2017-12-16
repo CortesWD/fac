@@ -2,15 +2,15 @@
 header.container-fluid
 	div.row
 		//Button toggle
-		div.btn-menu.col-sm-1
+		div.btn-menu.col-sm-1.col-xs-2
 			a.btn.btn-toggle(href="#" role="button")
 				i.icon.icon-nav
 		///-Button toggle
 		
 		//Logo FAC
-		div.col-sm-8.col-sm-offset-1.content-text
-			div.col-sm-3
-				+image('logo-fac.png', 'Fuerza Aérea Colombiana')(class="img-responsive")
+		div.col-xs-10.col-sm-8.col-sm-offset-1.content-text
+			div.col-sm-3.col-xs-6
+				+image('logo-fac.png', 'Fuerza Aérea Colombiana')(class="img-responsive img-logo")
 			
 			div.col-sm-3
 				h1.text-center Intranet FAC
@@ -26,7 +26,7 @@ header.container-fluid
 		///-Logo FAC
 		
 		//Buscador y fecha
-		div.col-sm-3
+		div.col-sm-3.col-xs-12
 			
 			div.container-buscador
 				form#form-buscar

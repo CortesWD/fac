@@ -21,3 +21,17 @@
 			
 		.title-section
 			max-width 100%
+			
+
+@media (max-width:$screen-sm)
+	.row
+		padding-left 0.5rem
+		padding-right @padding-left
+		
+		for x in 1..12
+			.col-xs-{x},
+			.col-sm-{x},
+			.col-md-{x},
+			.col-lg-{x}
+				padding-left 0.5rem
+				padding-right @padding-left

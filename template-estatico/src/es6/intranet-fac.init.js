@@ -7,8 +7,11 @@ jQuery(document).ready(function($) {
 	jQuery('.btn-toggle').click(function(e) {
 		e.preventDefault();
 
+		if(jQuery(window).width() > 768){
 		jQuery('section.container-fluid')
 			.toggleClass('push-menu');
+
+		};
 
 		// jQuery('body')
 		// 	.toggleClass('hidden-x');
@@ -19,9 +22,13 @@ jQuery(document).ready(function($) {
 
 
 	//Header fijo
+	let topsi;
+	if (jQuery(window).width() > 768)  topsi = 100;
+	topsi = 20;
+
 	$header.affix({
 		offset:{
-			top:  100
+			top:  topsi
 		}
 	});
 
@@ -83,6 +90,25 @@ jQuery(document).ready(function($) {
 
 	});
 
+	//slider para sys de informacion en mobile
 
-	/*No pasar de aca*/
+	if(jQuery(window).width() < 768 ){
+
+		jQuery('.lista-iconos .lista-horizontal a').unwrap();
+
+		jQuery('.lista-iconos').slick({
+			infinite: true,
+			slidesToShow: 1,
+	  		slidesToScroll: 1,
+	  		dots: false,
+	  		arrows:true,
+	  		prevArrow: '<a href="#" class="fa fa-chevron-left slick-prev" ></a>',
+	  		nextArrow: '<a href="#" class="fa fa-chevron-right slick-next" ></a>'
+
+		});
+
+	}
+
+
+
 });

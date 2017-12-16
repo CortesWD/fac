@@ -94,12 +94,13 @@ block content
 					div.col-sm-4
 						
 						div.destacado
-							a(href="#"): +image('content/demo-destacado.jpg', 'titulo de noticia')
-							
-							h3.destacado-title
-								a(href="#") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui iure natus saepe voluptates nostrum vel inventore, velit, doloribus beatae dolores voluptatum autem quia tenetur dolorum eos quas nisi aut quisquam!
+							a.destacado-img(href="#"): +image('content/demo-destacado.jpg', 'titulo de noticia')
 
-							p.destacado-fecha.text-right 23 de noviembre de 2017
+							div.destacado-content
+								h3.destacado-title
+									a(href="#") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui iure natus saepe voluptates nostrum vel inventore, velit, doloribus beatae dolores voluptatum autem quia tenetur dolorum eos quas nisi aut quisquam!
+
+								p.destacado-fecha.text-right 23 de noviembre de 2017
 		
 					///-Item
 
@@ -149,6 +150,11 @@ block content
 								div.embed-responsive.embed-responsive-16by9
 									video.embed-responsive-item.slider-video.video-js(width="720", height="480", data-setup='{"controls":true, "autoplay":false,"preload": "auto"}')
 										source(src="video/demo.mp4", type="video/mp4" )
+
+					div.item
+						div.multimedia
+							div.embed-responsive.embed-responsive-16by9
+								iframe.embed-responsive-item(width="560" height="315" src="https://www.youtube.com/embed/a7FEE1L0Z-o?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen)
 
 			///-slider videos
 
