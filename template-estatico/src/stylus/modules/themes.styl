@@ -1,0 +1,169 @@
+
+for color, val in $temas
+	body.{color}
+		footer
+				.bg-blue
+					background-color val
+					
+		header
+			background-color val
+			background-image none
+			
+			.container-buscador
+				
+				input
+					border none
+					
+				.form
+					&-group					
+						button
+							color val
+							
+			.fecha
+				color white
+				
+
+		.badge
+			background-color val
+			color white
+			
+		.bg
+			&-blue
+				background-color val
+				color white
+				
+				a
+					color white
+					
+				.title-section
+					border-bottom 1px solid white
+					color white
+			
+		.comentario
+			&-item
+				border-color val
+				
+			&-usuario
+				a
+					color val
+					
+				i
+					color lighten(val, 40%)
+			
+
+			&-text
+				border-left-color lighten(val, 40%)
+				a
+					color $azul
+					
+		.container-sys-info
+				.lista-iconos
+					a
+						border-bottom-color val
+						
+				.lista-horizontal
+					a
+						border-right-color val
+
+		.menu-nav
+			a
+				&:hover
+					background-color val
+					
+		.noticia
+			.btn
+				background-color val
+				color white
+		.title-section
+			color val
+		
+		.revista
+			.btn
+				background-color val
+				color white
+		.row
+			&-content
+				h2,h3,h4,h5,h6
+					color val	
+					
+		.slick	
+			&-arrow
+				color val
+				
+			&-dots				
+				li					
+					button 
+						background-color $gris
+					
+					&.slick-active
+						button 
+							background-color val
+							
+		.text
+			&-title
+				color val
+
+							
+		#slider-videos
+			.slick-dots
+				li
+					button
+						background-color val
+						border 1px solid white
+						
+					&.slick-active
+						button
+							background-color #fff
+							border 1px solid val
+
+		
+		.video-js
+			.vjs-big-play-button
+				border-color val
+				
+
+		//specs por color
+			
+		if color == 'amarillo'
+			header
+				background-color black
+				
+			footer
+				.bg-blue
+					background-color black
+					
+
+			.noticia
+				.btn
+					color black
+					
+			.revista
+				.btn
+					color black
+					
+			.bg
+				&-blue
+						
+					.title-section
+						color black
+		if color == 'gris'
+			.bg
+				&-blue
+						
+					.title-section
+						color $amarillo
+						
+			.menu-nav
+				a
+					&:hover
+						background-color $azul
+			.noticia
+				.btn
+					background-color $azul
+			
+			.title-section
+				color $azul
+			.revista
+				.btn
+					background-color $azul
+			

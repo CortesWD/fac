@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 
 	jQuery(document).on('click', '.vjs-big-play-button', function () {
 		// body...
-		console.log('le di play');
+		// console.log('le di play');
 
 		jQuery(this)
 			.parent()
@@ -90,21 +90,28 @@ jQuery(document).ready(function($) {
 
 	});
 
-	//slider para sys de informacion en mobile
+	//ajustes de layout para mobile
 
 	if(jQuery(window).width() < 768 ){
 
-		jQuery('.lista-iconos .lista-horizontal a').unwrap();
+		//boton categoria va primero
+		jQuery('.noticia-container .overlay').each(function(index, el) {
+				
+				jQuery(this).find('.btn-more')
+					.detach()
+					.prependTo(this);
 
-		jQuery('.lista-iconos').slick({
-			infinite: true,
-			slidesToShow: 1,
-	  		slidesToScroll: 1,
-	  		dots: false,
-	  		arrows:true,
-	  		prevArrow: '<a href="#" class="fa fa-chevron-left slick-prev" ></a>',
-	  		nextArrow: '<a href="#" class="fa fa-chevron-right slick-next" ></a>'
 
+		});
+		//fecha va primero
+
+		jQuery('.destacado .destacado-content').each(function(index, el) {
+
+			jQuery(this).find('.destacado-fecha')
+				.detach()
+				.prependTo(this)
+
+			
 		});
 
 	}

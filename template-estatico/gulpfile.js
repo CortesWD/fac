@@ -211,9 +211,9 @@ gulp.task('browserSync',  () =>{
 
 
 //tarea que observa cambios para recargar el navegador
-gulp.task('watch', ['browserSync', 'views', 'css', 'csslint', 'js'],  () =>{
+gulp.task('watch', ['browserSync', 'views', 'css', 'js'],  () =>{
 
-  gulp.watch( routes.src + routes.stylus +'**/*.styl', {cwd:'./'} ,  ['css', 'csslint']); //Stylus
+  gulp.watch( routes.src + routes.stylus +'**/*.styl', {cwd:'./'} ,  ['css']); //Stylus
   gulp.watch([routes.src + routes.views + '*.pug', routes.src + routes.templates + '**/*.pug'], {cwd:'./'}, ['views']); //Pug
   gulp.watch('publication/js/**/*.js', {cwd:'./'}, browserSync.reload);
   gulp.watch([routes.src + routes.es6 + '*.js'], {cwd:'./'} ,   ['js']); //JS ES6

@@ -4,3 +4,41 @@
 	display inline-block
 	&-nav
 		background-image embedurl('../embed/icon-iconnav.svg' , 'utf-8')
+		
+
+.ic
+	border-radius 100%
+	box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
+	color white
+	display inline-block
+	font-size 2rem
+	margin 0 1rem 
+	padding 1rem
+	transitionBase()
+	vertical-align middle
+	width 4rem
+	
+	&:hover
+		color white
+		text-decoration none
+	
+	i
+		display block
+	
+	&-fb
+		background-color $facebook
+			
+		&:hover
+			background-color darken($facebook, 20%)
+
+	&-tw
+		background-color $twitter
+		
+		&:hover
+			background-color darken($twitter, 20%)
+	
+	&-ins
+		background-color $instagram
+		
+		&:hover
+			background-color darken($instagram, 20%)

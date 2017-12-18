@@ -123,6 +123,40 @@ h1.text-title
 				
 				&:nth-last-of-type(1)
 					border-right-color transparent
+	&.icons-admin
+		// display none
+		.btn-more
+			display none !important
+		.row
+			position initial
+			
+			.lista-iconos
+				box-shadow none
+				padding 4rem 0
+				
+				a
+					border none
+					display inline-block
+					
+					img
+						max-width 4rem
+						width 100%
+				
+					&:nth-of-type(1)
+						border-left-color transparent
+					
+			.lista-horizontal
+				box-shadow none
+				min-width auto
+				opacity 0.99
+				display inline
+				position initial 
+				right unset
+				top unset
+				
+				a
+					img
+						display block
 
 .content-gallery
 	margin 1rem auto

@@ -28,6 +28,8 @@
 		padding-left 0.5rem
 		padding-right @padding-left
 		
+	.container-social-mobile
+		display block
 	.container-slider
 		padding 0
 	
@@ -38,38 +40,39 @@
 			max-width 100% !important
 			
 	.container-sys-info
-		.btn-more
-			display none !important
-		.row
-			position initial
+		display none
+		// .btn-more
+		// 	display none !important
+		// .row
+		// 	position initial
 			
-			.lista-iconos
-				box-shadow none
-				padding 4rem 0
+		// 	.lista-iconos
+		// 		box-shadow none
+		// 		padding 4rem 0
 				
-				a
-					border none
-					display block
+		// 		a
+		// 			border none
+		// 			display block
 					
-					img
-						max-width 12rem
-						width 100%
+		// 			img
+		// 				max-width 12rem
+		// 				width 100%
 				
-					&:nth-of-type(1)
-						border-left-color transparent
+		// 			&:nth-of-type(1)
+		// 				border-left-color transparent
 					
-			.lista-horizontal
-				box-shadow none
-				min-width auto
-				opacity 0.99
-				display inline
-				position initial 
-				right unset
-				top unset
+		// 	.lista-horizontal
+		// 		box-shadow none
+		// 		min-width auto
+		// 		opacity 0.99
+		// 		display inline
+		// 		position initial 
+		// 		right unset
+		// 		top unset
 				
-				a
-					img
-						display block
+		// 		a
+		// 			img
+		// 				display block
 				
 	
 	.destacado
@@ -78,11 +81,15 @@
 		
 		&-content
 			float left
-			max-width 80%
+			max-width 85%
 			padding-left 0.5rem
+		&-fecha
+			text-align left !important
+			margin-top 1rem
+			
 		&-img
 			float left
-			max-width 20%
+			max-width 15%
 		&-title
 			display block
 			font-size 1.6rem
@@ -93,14 +100,17 @@
 			white-space normal
 
 	.noticia
-		
+			
 		.col-sm-6
 			padding 0
 
 		&-container
+			border-bottom 1px solid darken($gris, 40%)
 			overflow visible
 			margin 3rem auto
+			
 		&-horizontal
+			border-bottom none
 			height auto
 			padding-bottom 0
 			margin 0
@@ -111,16 +121,18 @@
 				padding 0
 				
 		img
-			object-fit(initial)
-			// position absolute
-			max-width 20%
+			display none
+			// object-fit(initial)
+			// // position absolute
+			// max-width 20%
 		
 		.overlay
 			background-color transparent
-			left 20%
-			padding 0 1rem
-			top 0
-			width 80% !important
+			left unset
+			padding 1rem
+			top unset
+			position initial
+			width 100% !important
 			a
 				color $gris
 
@@ -138,7 +150,10 @@
 		max-width 100%
 		
 
-// @media (min-width:1280px)
+@media (max-width:400px)
+	.menu-container
+		left -82%
+		width 80%
 
 
 @media (min-width:1280px)
