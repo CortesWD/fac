@@ -60,9 +60,9 @@ const baseDir = (debug)?'':routes.app;
 //arreglo concatenar JS en el orden en el que se cargan
 const jsLibs = [
   baseDir + routes.js +'libs/bootstrap.min.js',
+  baseDir + routes.js +'libs/video.js',
   baseDir + routes.js +'libs/slick.js',
-  baseDir + routes.js +'libs/jquery.magnific-popup.min.js',
-  baseDir + routes.js +'libs/video.js'
+  baseDir + routes.js +'libs/jquery.magnific-popup.min.js'
 ];
 
 

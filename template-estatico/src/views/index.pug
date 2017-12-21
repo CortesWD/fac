@@ -119,6 +119,10 @@ block content
 					-if(y % 3 === 0 )
 						div.clearfix
 
+				div.clearfix
+				p.text-right
+					a.btn.btn-all(href="#") Ver Todos &gt;
+
 
 
 			///-Destacados
@@ -147,7 +151,7 @@ block content
 		div.row
 			//slider videos
 			h2.title-section destacados
-			div.col-sm-7
+			div.col-sm-6
 
 				div#slider-videos.slider
 
@@ -168,9 +172,12 @@ block content
 							div.embed-responsive.embed-responsive-16by9
 								iframe.embed-responsive-item(width="560" height="315" src="https://www.youtube.com/embed/a7FEE1L0Z-o?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen)
 
+				div.clearfix
+				p.text-right
+					a.btn.btn-all(href="#") Ver Todos &gt;
 			///-slider videos
 
-			div.col-sm-5
+			div.col-sm-6
 				div.banner.banner-emisora
 					a(href="#"): +image('ads/banner-doctrina.jpg', 'Emisora')(class="img-responsive")
 				
