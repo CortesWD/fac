@@ -161,6 +161,9 @@ h1.text-title
 .content-gallery,
 .content-pdf
 	margin 1rem auto
+	max-height 50rem
+	clearfix()
+	
 	a
 		display block
 		margin 0.5rem auto
@@ -169,6 +172,33 @@ h1.text-title
 		height 10rem
 		object-fit(cover)
 		width 100%
+
+.content-pdf
+	overflow hidden
+
+.content-asociados
+	h3
+		color $azul
+		
+	ul,
+	.lista-asociados
+		list-style-type none
+		padding-left 2rem
+		
+		li
+			border-bottom 1px dotted $gris
+			padding 0.5rem 0
+			i
+				color $azul
+				
+			a
+				color $rojo
+				padding 0 0.5rem 
+				
+			&:nth-last-of-type(1)
+				border-bottom-color transparent
+			
+	
 
 .etiquetas
 	h5,p

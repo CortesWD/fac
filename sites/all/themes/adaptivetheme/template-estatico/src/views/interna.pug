@@ -68,6 +68,19 @@ block content
 				
 				div.embed-responsive.embed-responsive-16by9
 					iframe.embed-responsive-item(src="pdf-viewer/index.html?file=../pdf/test.pdf")
+			
+			div.clearfix
+
+
+			h2 Sub Contenido
+
+			div.content-asociados
+				h3 Padre
+				ul.lista-asociados
+					-for(x=0; x < 6;x++)
+						li
+							i.fa.fa-angle-double-right(aria-hidden="true")
+							a(href="#") texto hijo
 
 			//Usuario
 			div.clearfix
