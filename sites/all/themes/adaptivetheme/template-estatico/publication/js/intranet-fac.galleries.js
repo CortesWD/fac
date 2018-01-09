@@ -1,0 +1,1 @@
+"use strict";jQuery(document).ready(function(){jQuery(".content-gallery").each(function(){jQuery(this).magnificPopup({type:"image",delegate:"a",gallery:{enabled:!0}})})});

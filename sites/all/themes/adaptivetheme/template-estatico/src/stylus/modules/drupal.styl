@@ -1,0 +1,62 @@
+header
+	.container-buscador
+		form
+			background-color white
+			border-radius 10px
+			position relative
+			margin-bottom 15px
+		
+		.form-actions
+			background transparent
+			border none
+			color $azul
+			cuadrado(4.2rem)
+			position absolute
+			right 0.5rem
+			top 50%
+			transform translateY(-50%)
+			display inline-block 
+			font normal normal normal 14px/1 FontAwesome 
+			font-size inherit 
+			text-rendering auto 
+			-webkit-font-smoothing antialiased 
+			-moz-osx-font-smoothing grayscale 
+			
+			&::before
+				content "\f002"
+				font-size 2rem
+				left 50%
+				position absolute
+				top 50%
+				transform translate3d(-50%,-50%,0)
+				
+			.form-submit
+				position absolute
+				cuadrado(100%)
+				top 0
+				left 0
+				opacity 0
+				
+		.form-text
+			background-color transparent
+			border none
+			color #555
+			display block
+			font-size 14px
+			height 34px
+			line-height 1.428571429
+			padding 6px 12px
+			transitionBase()
+			width 100%
+
+.admin-menu
+	.btn-menu
+		z-index 10
+		
+	.region.region-header
+		position relative
+		z-index 0
+		
+
+	.menu-container
+		top 9.8rem

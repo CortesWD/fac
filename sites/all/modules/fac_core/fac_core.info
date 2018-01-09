@@ -1,0 +1,7 @@
+name = Modulo fuerza aerea 
+description = modulo custom core fuerza aerea
+
+package = Modulos Customs FAC
+version = 1.0
+core = 7.x
+files[] = fac_core.module

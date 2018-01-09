@@ -1,0 +1,426 @@
+<?php
+function fac_core_menu() {
+	$items['admin/config/color-theme'] = array(
+      'title' => t('Configuracion color del template'),
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('inscripcion_sisinfo_form'),
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM
+  );
+	return $items;
+
+}
+function fac_core_block_info() {
+    $blocks = array();
+    $blocks['menuPrincipal'] = array(
+       'info' => t("Menu principal"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['menuFooter'] = array(
+       'info' => t("Menu del Footer principal"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['buscador'] = array(
+       'info' => t("buscador header principal"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['servicio1'] = array(
+       'info' => t("Bloque region pauta 1 (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['servicio2'] = array(
+       'info' => t("Bloque region servicio 1 (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['servicio3'] = array(
+       'info' => t("Bloque region servicio 2 (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['servicio4'] = array(
+       'info' => t("Bloque region servicio 3 (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['destacado1'] = array(
+       'info' => t("Bloque Region destacado 1 (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['revistaHome'] = array(
+       'info' => t("Bloque para visualizar la ultima revista (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['iconosFLotantes'] = array(
+       'info' => t("Bloque para iconos flotantes (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['videoHome'] = array(
+       'info' => t("Bloque slider de videos (HOME)"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    $blocks['taxonomyHistory'] = array(
+       'info' => t("Bloque interno para las secciones"),
+       'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    return $blocks;
+}
+function fac_core_block_view($delta = '') {
+    $block = array();
+    $variables = array();
+    global $base_url;
+    switch ($delta) {
+      case 'taxonomyHistory':
+          $block['subject'] = t('');
+          $block['content'] = latest_news();
+      break;
+      case 'videoHome':
+        $variables['videos'] = traer_videos_dest();
+        $block['content'] = theme('videoHome', $variables);
+      break;
+      case 'iconosFLotantes':
+        $variables['iconos'] = traer_iconos_dest();
+        $block['content'] = theme('iconosFLotantes', $variables);
+      break;
+      case 'revistaHome':
+        $variables['revista'] = traer_ultima_revista();
+        $block['content'] = theme('revistaHome', $variables);
+      break;
+      case 'servicio1':
+      	$variables['noticias'] = traer_noticias_dest(variable_get('taxonomy_save_servicio_1'));
+      	$taxo = taxonomy_term_load(variable_get('taxonomy_save_servicio_1'));
+      	$variables['noticias']['tax'] = $taxo->name;
+      	$variables['noticias']['path'] = $base_url.'/'.drupal_get_path_alias('taxonomy/term/'.$taxo->tid);
+        $block['content'] = theme('servicio1', $variables);
+      break;
+      case 'servicio2':
+      
+      	$variables['noticias'] = traer_noticias_dest(variable_get('taxonomy_save_servicio_2'));
+      	$taxo = taxonomy_term_load(variable_get('taxonomy_save_servicio_2'));
+      	$variables['noticias']['tax'] = $taxo->name;
+      	$variables['noticias']['path'] = $base_url.'/'.drupal_get_path_alias('taxonomy/term/'.$taxo->tid);
+        $block['content'] = theme('servicio2', $variables);
+      break;
+      case 'servicio3':
+      	$variables['noticias'] = traer_noticias_dest(variable_get('taxonomy_save_servicio_3'));
+      	$taxo = taxonomy_term_load(variable_get('taxonomy_save_servicio_3'));
+		$variables['noticias']['tax'] = $taxo->name;
+      	$variables['noticias']['path'] = $base_url.'/'.drupal_get_path_alias('taxonomy/term/'.$taxo->tid);
+        $block['content'] = theme('servicio3', $variables);
+      break;
+      case 'servicio4':
+      	$variables['noticias'] = traer_noticias_dest(variable_get('taxonomy_save_servicio_4'));
+      	$taxo = taxonomy_term_load(variable_get('taxonomy_save_servicio_4'));
+      	$variables['noticias']['tax'] = $taxo->name;
+      	$variables['noticias']['path'] = $base_url.'/'.drupal_get_path_alias('taxonomy/term/'.$taxo->tid);
+        $block['content'] = theme('servicio4', $variables);
+      break;
+      case 'menuPrincipal':
+      	$variables['menu'] = traer_menu('main-menu');
+        $block['content'] = theme('menuPrincipal', $variables);
+      break;
+      case 'menuFooter':
+      	$variables['menu'] = traer_menu('menu-menu-pie-pagina');
+        $block['content'] = theme('menuFooter', $variables);
+      break;
+      case 'buscador':
+        $block['content'] = theme('buscador', $variables);
+      break;
+      case 'destacado1':
+      	$variables['noticias'] = traer_ult_noticias();
+        $block['content'] = theme('destacado1', $variables);
+      break;
+    }
+  return $block;
+}
+
+function latest_news() {
+    $query = db_select('taxonomy_index', 'b');
+
+    $query->join('node', 'node', 'node.nid = b.nid');
+    $query = $query->fields('b', array())
+            ->condition('node.status', 1) //Published.
+            ->condition('b.tid', arg(2), '=');
+
+    $query = $query->extend('PagerDefault');
+    $result = $query->limit(20)->orderBy('node.created', 'DESC')->execute()->fetchAll(PDO::FETCH_ASSOC);
+    $paging = theme('pager');
+
+    return theme('latest_news',array('data' => $result,'paging'=>$paging));
+}
+
+
+function traer_videos_dest(){
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_destacado', 'c', 'n.nid = c.entity_id');
+  $query->condition('c.field_destacado_value', 1, '=');
+  $nodo= array();
+    $query->fields('n',array())//SELECT the fields from node
+    ->orderBy('n.changed', 'DESC')//ORDER BY created
+    ->condition('n.type', 'video');
+
+    $result = $query->execute();
+
+    while($record = $result->fetchAssoc()) {
+        $nodo[]=node_load((int)$record['nid']);
+    }
+    //var_dump($nodo);
+return $nodo;
+}
+
+function traer_iconos_dest(){
+  $query = db_select('node', 'n');
+  $nodo= array();
+    $query->fields('n',array())//SELECT the fields from node
+    ->orderBy('n.changed', 'DESC')//ORDER BY created
+    ->condition('n.type', 'sistema_de_informacion');
+    $result = $query->execute();
+    while($record = $result->fetchAssoc()) {
+        $nodo[]=node_load((int)$record['nid']);
+    }
+    //var_dump($nodo);
+return $nodo;
+}
+
+function traer_ultima_revista(){
+  $nodo= array();
+
+  $query = db_select('node', 'n');
+
+  $query->condition('n.type', 'revista');
+    $query->fields('n',array())//SELECT the fields from node
+    ->orderBy('n.created', 'DESC')//ORDER BY created
+    ->condition('n.status', 1, '=')
+    ->range(0,1);//LIMIT to 2 records
+
+    $result = $query->execute();
+
+    while($record = $result->fetchAssoc()) {
+        $nodo[]=node_load((int)$record['nid']);
+    }
+  return $nodo;
+}
+
+function traer_ult_noticias(){
+	$nodo= array();
+
+	$query = db_select('node', 'n');
+  $query->join('field_data_field_destacado', 'c', 'n.nid = c.entity_id');
+  $query->join('field_data_field_categoria', 'd', 'n.nid = d.entity_id');
+  $query->condition('c.field_destacado_value', 1, '=');
+  $query->condition('d.field_categoria_tid', 30, '=');
+	$or = db_or();
+
+	$or->condition('n.type', 'article');
+	$or->condition('n.type', 'page');
+
+    $query->fields('n',array())//SELECT the fields from node
+    ->orderBy('n.created', 'DESC')//ORDER BY created
+    ->condition('n.status', 1, '=')
+    ->condition($or)
+    ->range(0,6);//LIMIT to 2 records
+
+    $result = $query->execute();
+
+    while($record = $result->fetchAssoc()) {
+        $nodo[]=node_load((int)$record['nid']);
+    }
+	return $nodo;
+}
+
+function fac_core_block_configure($delta = ''){
+	$block = array();
+	switch ($delta) {
+      case 'servicio1':
+      	$options = array(); 
+      	$tree =  taxonomy_get_tree(2); 
+
+      	foreach ($tree as $key => $value) {
+      		$options[$value->tid] = $value->name;
+      	}	
+		$form['taxonomy_save_servicio_1'] = array(
+	    '#type' => 'select',
+	    '#title' => t('Seleccione la seccion a destacar'),
+	    '#default_value' => variable_get('taxonomy_save_servicio_1'),
+	    '#options' => $options,
+	    '#required' => $form['#required'],
+	  );
+      break;
+      case 'servicio2':
+      	$options = array(); 
+      	$tree =  taxonomy_get_tree(2); 
+
+      	foreach ($tree as $key => $value) {
+      		$options[$value->tid] = $value->name;
+      	}	
+		$form['taxonomy_save_servicio_2'] = array(
+	    '#type' => 'select',
+	    '#title' => t('Seleccione la seccion a destacar'),
+	    '#default_value' => variable_get('taxonomy_save_servicio_2'),
+	    '#options' => $options,
+	    '#required' => $form['#required'],
+	  );
+      break;
+      case 'servicio3':
+      	$options = array(); 
+      	$tree =  taxonomy_get_tree(2); 
+
+      	foreach ($tree as $key => $value) {
+      		$options[$value->tid] = $value->name;
+      	}	
+		$form['taxonomy_save_servicio_3'] = array(
+	    '#type' => 'select',
+	    '#title' => t('Seleccione la seccion a destacar'),
+	    '#default_value' => variable_get('taxonomy_save_servicio_3'),
+	    '#options' => $options,
+	    '#required' => $form['#required'],
+	  );
+      break;
+      case 'servicio4':
+      	$options = array(); 
+      	$tree =  taxonomy_get_tree(2); 
+
+      	foreach ($tree as $key => $value) {
+      		$options[$value->tid] = $value->name;
+      	}	
+		$form['taxonomy_save_servicio_4'] = array(
+	    '#type' => 'select',
+	    '#title' => t('Seleccione la seccion a destacar'),
+	    '#default_value' => variable_get('taxonomy_save_servicio_4'),
+	    '#options' => $options,
+	    '#required' => $form['#required'],
+	  );
+      break;
+    }
+
+    return system_settings_form($form);
+}
+function fac_core_block_save($delta = '', $edit = array()) {
+
+    switch ($delta) {
+      case 'servicio1':
+      	variable_set('taxonomy_save_servicio_1', $edit['taxonomy_save_servicio_1']);
+      break;
+      case 'servicio2':
+      	variable_set('taxonomy_save_servicio_2', $edit['taxonomy_save_servicio_2']);
+      break;
+      case 'servicio3':
+      	variable_set('taxonomy_save_servicio_3', $edit['taxonomy_save_servicio_3']);
+      break;
+      case 'servicio4':
+      	variable_set('taxonomy_save_servicio_4', $edit['taxonomy_save_servicio_4']);
+      break;
+    }
+}
+
+
+function fac_core_theme($existing, $type, $theme, $path){
+    return array(
+      'menuPrincipal' => array(
+        'template' => 'theme/menuPrincipal'
+      ),
+      'menuFooter' => array(
+        'template' => 'theme/menuFooter'
+      ),
+      'buscador' => array(
+        'template' => 'theme/buscador'
+      ),
+      'servicio1' => array(
+        'template' => 'theme/servicio1'
+      ),
+      'servicio2' => array(
+        'template' => 'theme/servicio2'
+      ),
+      'servicio3' => array(
+        'template' => 'theme/servicio3'
+      ),
+      'servicio4' => array(
+        'template' => 'theme/servicio4'
+      ),
+      'destacado1' => array(
+        'template' => 'theme/destacado1'
+      ),
+      'revistaHome' => array(
+        'template' => 'theme/revistaHome'
+      ),
+      'iconosFLotantes' => array(
+        'template' => 'theme/iconosFLotantes'
+      ),
+      'videoHome'  => array(
+        'template' => 'theme/videoHome'
+      ),
+      'latest_news' => array('variables' => array('data' => array()),
+        'template' => 'theme/latest_news'
+      ),
+	);
+}
+
+function traer_menu($nameMenu){
+	$items = array();
+	$menu_tree = menu_tree_all_data($nameMenu);
+
+	//var_dump($menu_tree);
+	foreach ($menu_tree as $key => $value) {
+		$items[$value["link"]["mlid"]]['path'] = $value["link"]["link_path"];
+		$items[$value["link"]["mlid"]]['title'] = $value["link"]["link_title"];
+		$items[$value["link"]["mlid"]]['icon'] = image_style_url("menu_icon", $value["link"]["options"]["menu_icon"]["path"]);
+	}
+	return $items;
+}
+
+function traer_noticias_dest($tax){
+	$query = db_select('node', 'n');
+	$query->join('taxonomy_index', 'b', 'n.nid = b.nid');
+	$query->join('field_data_field_destacado', 'c', 'n.nid = c.entity_id');
+	$query->condition('b.tid', (int)$tax, '=');
+	$query->condition('c.field_destacado_value', 1, '=');
+	$nodo= array();
+    $query->fields('n',array())//SELECT the fields from node
+    ->orderBy('n.changed', 'DESC')//ORDER BY created
+    ->condition('n.type', 'article')
+    ->range(0,1);//LIMIT to 2 records
+
+    $result = $query->execute();
+
+    while($record = $result->fetchAssoc()) {
+        $nodo[]=node_load((int)$record['nid']);
+    }
+    //var_dump($nodo);
+return $nodo;
+}
+
+function inscripcion_sisinfo_form($form, &$form_state, $no_js_use = FALSE) {
+
+    $form['description'] = array(
+    '#markup' => '<div>' . t('Por favor relacione la clase para administrar el color del template (Listado proporcionado en el manual).'). '</div>',
+    );
+
+    // Because we have many fields with the same values, we have to set
+    // #tree to be able to access them.
+    $form['#tree'] = TRUE;
+    $form['names_fieldset'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Clase para vestir la pantilla'),
+      '#prefix' => '<div id="names-fieldset-wrapper">',
+      '#suffix' => '</div>',
+    );
+
+		$form['names_fieldset']['clase'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Clase'),
+		'#description' => "Digite el nombre de la clase",
+		/*'#autocomplete_path' => 'autocomplete/inscripcion_sisinfo',*/
+		'#value' => variable_get('clase_template'),
+		'#disabled' => false,
+		'#required' => TRUE
+		);
+
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Guardar'),
+    );
+  return $form;
+}
+
+function inscripcion_sisinfo_form_submit($form, &$form_state) {
+  variable_set('clase_template', $form_state["input"]["names_fieldset"]["clase"]);
+  drupal_flush_all_caches();
+  drupal_set_message('La clase fue guardada satisfactoriamente!');
+}
