@@ -240,17 +240,17 @@
       <!--/-Tabs-->
       <!--Content tabs-->
       <div class="tab-content">
-        <div class="tab-pane active" id="instragram" role="tabpanel">
+        <div class="tab-pane active" id="instagram" role="tabpanel">
           Instagram
         </div>
         <div class="tab-pane" id="facebook" role="tabpanel">
-          <div style="width:90%; margin:auto;display:block">
+          <div style="margin:auto;display:block">
             <h2><span>Fuerza Aérea Colombiana  FuerzaAereaCol</span></h2>
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFuerzaAereaCol%2F&tabs=timeline&width=200&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=836494579793582" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           </div>
         </div>
         <div class="tab-pane" id="twitter" role="tabpanel">
-           <div style="width:90%; margin:auto;display:block">
+           <div style="margin:auto;display:block">
               <h2><span>Fuerza Aérea Colombiana  FuerzaAereaCol</span></h2>
                     <a class="twitter-timeline" href="https://twitter.com/FUERZAAEREACOL" data-widget-id="732210596880470016">Tweets por el @FUERZAAEREACOLO.</a>
               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

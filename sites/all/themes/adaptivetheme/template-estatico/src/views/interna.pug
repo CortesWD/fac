@@ -54,25 +54,50 @@ block content
 						source(src="video/demo.mp4", type="video/mp4" )
 			
 			h2 Ejemplo de galería
-			div.content-gallery
-				-for(x=0; x < 12; x++)
-					div.col-sm-3
+			//- div.content-gallery
+			//- 	-for(x=0; x < 12; x++)
+			//- 		div.col-sm-3
 
-						a(href="images/content/demo-article.jpg", title="title image "+x)
+			//- 			a(href="images/content/demo-article.jpg", title="title image "+x)
 
-							+image('gallery/demo-gallery-thumb.jpg')
+			//- 				+image('gallery/demo-gallery-thumb.jpg')
 			
-			h2 ejemplo de PDF
+			//- h2 ejemplo de PDF
 
-			div.content-pdf
-				
-				div.embed-responsive.embed-responsive-16by9
-					iframe.embed-responsive-item(src="pdf-viewer/index.html?file=../pdf/test.pdf")
-			
 			div.clearfix
+			div.content-cuadro-honor
+				h2.text-center.
+					<i class="fa fa-star"></i>
+					Cuadro de Honor
+					<i class="fa fa-star"></i>
+				
+				//Margen
+				div.col-sm-1
+				///-Margen
+
+				-for(y=0;y < 4; y ++)
+
+					div.col-sm-2
+						+image('gallery/demo-gallery-thumb.jpg')
+						p.nombre Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						p.division Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+				
+				div.col-sm-2
+						+image('gallery/demo-gallery-thumb.jpg')
+						p.nombre Grupo
+
+				div.clearfix
 
 
-			h2 Sub Contenido
+			//- div.content-pdf
+				
+			//- 	div.embed-responsive.embed-responsive-16by9
+			//- 		iframe.embed-responsive-item(src="pdf-viewer/index.html?file=../pdf/test.pdf")
+			
+			//- div.clearfix
+
+
+			//- h2 Sub Contenido
 
 			div.content-asociados
 				h3 Padre
@@ -81,6 +106,29 @@ block content
 						li
 							i.fa.fa-angle-double-right(aria-hidden="true")
 							a(href="#") texto hijo
+
+			div.content-asociados
+				h3 Anexos
+				ul.lista-asociados
+						li
+							i.fa.fa-file-pdf-o(aria-hidden="true")
+							a(href="#") PDF
+
+						li
+							i.fa.fa-file-excel-o(aria-hidden="true")
+							a(href="#") Excel
+
+						li
+							i.fa.fa-file-word-o(aria-hidden="true")
+							a(href="#") Word
+
+						li
+							i.fa.fa-file-powerpoint-o(aria-hidden="true")
+							a(href="#") Powerpoint
+
+						li
+							i.fa.fa-file-o(aria-hidden="true")
+							a(href="#") Otros
 
 			//Usuario
 			div.clearfix

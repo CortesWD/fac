@@ -38,6 +38,15 @@ object-fit(arguments)
 	-moz-object-fit arguments
 	-ms-object-fit arguments
 	-o-object-fit arguments
+	
+shadowMaker(iterations, blur, color)
+	$shadows = '0 0 0 transparent'
+	for i in 1..iterations
+		// $shadows += ', %spx %spx' % (i i) blur rgba(color, (i - 1/100%)  )
+		$shadows += ', %spx %spx' % (i i) blur color
+
+longShadow(iterations = 10, blur = 0, color = rgba(0, 0, 0, .5))
+	text-shadow unquote(shadowMaker(iterations, blur, color))
 
 //Soporte de propiedad calc en todos los navegadores modernos
 calc()

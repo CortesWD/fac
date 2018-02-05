@@ -60,3 +60,112 @@ header
 
 	.menu-container
 		top 9.8rem
+
+
+
+.container-cierre
+	.region-destacado5
+		img
+			display block
+			height auto !important
+			width 100% !important
+			max-width 100% !important
+
+		
+
+
+#comments
+	margin 1rem auto
+	
+	.comment
+		border 1px solid $gris
+		clear both
+		clearfix()
+		padding 0.5rem
+			
+
+		&-content,
+		&-header
+			float right
+			padding 0.5rem
+			width 80%
+			h3
+				margin 1rem auto
+				font-weight $normal
+				font-size 1.8rem
+				
+				a
+					color $azul
+					
+		.links
+			display none
+			
+		.submitted
+			float left
+			padding 0.5rem
+			width 20%
+		
+			p
+				margin 0 auto
+				padding 0 2rem
+				text-align left
+				
+			.username
+				color $azul
+
+.page-views		
+	.view
+		&-display-id-page
+			margin 4rem auto
+			max-width 1150px
+			
+		&-content
+			.views-row
+				make-sm-column(3, 3rem)
+				margin-bottom 1rem
+				margin-top @margin-bottom
+				
+				img
+					img-responsive(block)
+					width 100%
+		
+	.views			
+		&-field-field-image
+			img
+				img-responsive(block)
+				width 100%
+				
+		&-field-title
+			background-color #fcfcfc
+			padding 1rem 2rem
+			
+			h3.field-content
+				margin 0 auto
+				a
+					color $gris
+					display block
+					font-size 1.8rem
+					line-height 1.1
+					
+.revista
+	iframe
+		max-width 100%
+				
+
+.view-calendar
+	.date-heading
+		h3
+			text-shadow none
+			max-width 100% !important
+			
+			a
+				color $azul
+				
+	.date-nav-wrapper
+		.date-prev,
+		.date-next
+			background-color $azul
+			a
+				background-color transparent !important
+				border none !important
+				color white !important

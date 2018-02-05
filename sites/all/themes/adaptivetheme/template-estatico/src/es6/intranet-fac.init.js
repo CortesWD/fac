@@ -1,11 +1,11 @@
+
 jQuery(document).ready(function($) {
 
 	const $header = jQuery('header.container-fluid');
 	// Dropdown menu
 
-	jQuery('.drop-submenu a').click(function (e) {
+	jQuery('.drop-submenu > a').click(function (e) {
 		e.preventDefault();
-
 		
 
 		// jQuery(this).parent().addClass('active');
@@ -61,12 +61,18 @@ jQuery(document).ready(function($) {
   		autoplay:true,
   		autoplaySpeed: 5000,
   		infinite: true
-
-
 	}
 
 	jQuery('#slider-home').slick(sliderHome);
-	jQuery('#slider-videos').slick(sliderHome);
+	jQuery('#slider-videos').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		arrows:false,
+		autoplay:false,
+		infinite: true
+	});
 
 	//Mostrar iconos de aplicaciones
 
@@ -122,7 +128,6 @@ jQuery(document).ready(function($) {
 					.detach()
 					.prependTo(this);
 
-
 		});
 		//fecha va primero
 
@@ -139,7 +144,7 @@ jQuery(document).ready(function($) {
 
 //clearfix en views-destacados//
 	
-	jQuery('.view-destacados .views-row, .view-galer-a-de-revistas .views-row ').each(function(i, el) {
+	jQuery('.page-views .view-content .views-row').each(function(i, el) {
 
 		if( i %3 == 0 && i > 0 ){
 
@@ -150,6 +155,8 @@ jQuery(document).ready(function($) {
 
 		
 	});
+
+
 
 
 

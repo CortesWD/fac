@@ -7,8 +7,12 @@
   <title>Intranet FAC</title>
   <meta name="description" content="Description">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/intranet-fac.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/p-video-js.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- Web Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Titillium+Web:400,700" rel="stylesheet"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -114,28 +118,38 @@
         </div>
       </div>
       <h2>Ejemplo de galería</h2>
-      <div class="content-gallery">
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 0"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 1"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 2"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 3"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 4"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 5"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 6"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 7"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 8"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 9"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 10"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-        <div class="col-sm-3"><a href="images/content/demo-article.jpg" title="title image 11"><img src="images/gallery/demo-gallery-thumb.jpg"/></a></div>
-      </div>
-      <h2>ejemplo de PDF</h2>
-      <div class="content-pdf">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="pdf-viewer/index.html?file=../pdf/test.pdf"></iframe>
-        </div>
-      </div>
       <div class="clearfix"></div>
-      <h2>Sub Contenido</h2>
+      <div class="content-cuadro-honor">
+        <h2 class="text-center">
+          <i class="fa fa-star"></i>
+          Cuadro de Honor
+          <i class="fa fa-star"></i>
+          
+        </h2>
+        <!--Margen-->
+        <div class="col-sm-1"></div>
+        <!--/-Margen-->
+        <div class="col-sm-2"><img src="images/gallery/demo-gallery-thumb.jpg"/>
+          <p class="nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <p class="division">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        </div>
+        <div class="col-sm-2"><img src="images/gallery/demo-gallery-thumb.jpg"/>
+          <p class="nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <p class="division">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        </div>
+        <div class="col-sm-2"><img src="images/gallery/demo-gallery-thumb.jpg"/>
+          <p class="nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <p class="division">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        </div>
+        <div class="col-sm-2"><img src="images/gallery/demo-gallery-thumb.jpg"/>
+          <p class="nombre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <p class="division">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        </div>
+        <div class="col-sm-2"><img src="images/gallery/demo-gallery-thumb.jpg"/>
+          <p class="nombre">Grupo</p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
       <div class="content-asociados">
         <h3>Padre</h3>
         <ul class="lista-asociados">
@@ -145,6 +159,16 @@
           <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">texto hijo</a></li>
           <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">texto hijo</a></li>
           <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="#">texto hijo</a></li>
+        </ul>
+      </div>
+      <div class="content-asociados">
+        <h3>Anexos</h3>
+        <ul class="lista-asociados">
+          <li><i class="fa fa-file-pdf-o" aria-hidden="true"></i><a href="#">PDF</a></li>
+          <li><i class="fa fa-file-excel-o" aria-hidden="true"></i><a href="#">Excel</a></li>
+          <li><i class="fa fa-file-word-o" aria-hidden="true"></i><a href="#">Word</a></li>
+          <li><i class="fa fa-file-powerpoint-o" aria-hidden="true"></i><a href="#">Powerpoint</a></li>
+          <li><i class="fa fa-file-o" aria-hidden="true"></i><a href="#">Otros</a></li>
         </ul>
       </div>
       <!--Usuario-->
@@ -217,7 +241,10 @@
   <!--/-Footer-->
   <!--Scripts-->
   <script src="js/libs/jquery.js"></script>
-  <script src="js/libs.min.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
+  <script src="js/libs/video.js"></script>
+  <script src="js/libs/slick.js"></script>
+  <script src="js/libs/jquery.magnific-popup.min.js"></script>
   <script src="js/intranet-fac.init.js"></script>
   <script src="js/intranet-fac.galleries.js"></script>
 </body></html>
