@@ -126,10 +126,16 @@ header.container-fluid
 		.btn-menu
 			position relative
 		
+			.btn
+				padding 2rem 1rem
 		.content-text
 			text-align left
 			.aguila
 				display none
+			
+		.col-sm-4
+			display none
+
 		.row
 			padding 0
 			margin 0
@@ -139,3 +145,16 @@ header.container-fluid
 			
 		.fecha
 			display none
+			
+@media (max-width:640px) and (orientation: landscape)
+	header.container-fluid
+		.btn-menu		
+			.btn
+				padding 1rem
+				
+		.content-text
+			h1
+				text-align right
+			.img-logo
+				max-width 9rem
+
