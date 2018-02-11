@@ -17,6 +17,8 @@ jQuery(document).ready(function($) {
 
 	});
 
+
+
 	jQuery('.btn-toggle').click(function(e) {
 		e.preventDefault();
 
@@ -36,6 +38,21 @@ jQuery(document).ready(function($) {
 		}
 
 	});
+
+	const elShow = '.btn-toggle, .btn-toggle *, nav.menu-container, nav.menu-container *';
+	//cerrar menu con body
+	jQuery(document).click( function (e) {
+
+		if(!jQuery(e.target).is(elShow)){
+			jQuery('.menu-container').removeClass('active');
+			jQuery('.drop-submenu').removeClass('active');
+			jQuery('section.container-fluid').removeClass('push-menu');
+
+
+		}		
+
+
+	} );
 
 
 	//Header fijo
@@ -140,6 +157,8 @@ jQuery(document).ready(function($) {
 			
 		});
 
+
+
 	};
 
 //clearfix en views-destacados//
@@ -155,6 +174,8 @@ jQuery(document).ready(function($) {
 
 		
 	});
+
+
 
 
 
