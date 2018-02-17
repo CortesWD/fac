@@ -8,8 +8,14 @@ for color, val in $temas
 		header
 			background-color val
 			background-image none
+						
 			
 			.container-buscador
+				
+				.form-actions
+					background transparent
+					border none
+					color val
 				
 				input
 					border none
@@ -39,6 +45,26 @@ for color, val in $temas
 					border-bottom 1px solid white
 					color white
 			
+		.btn
+			&-all
+				background-color val
+				
+				&:hover
+					color val !important
+		.content-cuadro-honor
+			border-color val
+			
+			h2
+				background-color val
+				color white !important
+				
+			.nombre
+				color val
+
+		.content-asociados ul li i,
+		.content-asociados .lista-asociados li i
+			color val
+
 		.comentario
 			&-item
 				border-color val
@@ -120,6 +146,74 @@ for color, val in $temas
 		.video-js
 			.vjs-big-play-button
 				border-color val
+				
+		#comments			
+			.comment
+				&-content,
+				&-header
+					h3						
+						a
+							color val
+					
+				.submitted				
+					p						
+					.username
+						color val
+						
+		.poll
+			.bar
+				.foreground
+					background-color val
+					
+		.form-item
+			label
+				color val
+				
+			input
+				border-color val
+			
+
+		.form-submit
+			background-color val
+			border-color val
+			
+			&:hover
+				background-color #fff
+				color val
+				
+		.page-search-node
+			#content
+				#block-system-main
+
+					h2
+						color val
+					
+
+					.search-form
+								
+						.form-submit
+							background-color val
+					
+					.search-results
+						
+						.search-result
+							
+							.title
+
+								a
+									color val
+		
+		.view-calendar
+			.date-heading
+				h3					
+					a
+						color val
+						
+			.date-nav-wrapper
+				.date-prev,
+				.date-next
+					background-color val
+					a								
 				
 
 		//specs por color

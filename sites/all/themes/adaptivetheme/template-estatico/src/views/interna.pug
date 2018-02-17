@@ -71,22 +71,23 @@ block content
 					Cuadro de Honor
 					<i class="fa fa-star"></i>
 				
-				//Margen
-				div.col-sm-1
-				///-Margen
+				div.counter
+					//Margen
+					//- div.col-sm-1
+					///-Margen
 
-				-for(y=0;y < 4; y ++)
+					-for(y=0;y < 3; y ++)
 
+						div.col-sm-2
+							+image('gallery/demo-gallery-thumb.jpg')
+							p.nombre Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+							p.division Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					
 					div.col-sm-2
-						+image('gallery/demo-gallery-thumb.jpg')
-						p.nombre Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-						p.division Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-				
-				div.col-sm-2
-						+image('gallery/demo-gallery-thumb.jpg')
-						p.nombre Grupo
+							+image('gallery/demo-gallery-thumb.jpg')
+							p.nombre Grupo
 
-				div.clearfix
+					//- div.clearfix
 
 
 			//- div.content-pdf
