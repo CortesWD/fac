@@ -22,20 +22,29 @@ jQuery(document).ready(function($) {
 	jQuery('.btn-toggle').click(function(e) {
 		e.preventDefault();
 
+		jQuery(this).toggleClass('active');
+
 		if(jQuery(window).width() > 768){
 		jQuery('section.container-fluid')
 			.toggleClass('push-menu');
 
 		};
 
-		// jQuery('body')
-		// 	.toggleClass('hidden-x');
+		if(jQuery(window).width()< 768){
+
+			jQuery('body')
+				.toggleClass('body-fixed');
+		}
+
+
 		jQuery('.menu-container')
 			.toggleClass('active');
 
 		if(jQuery('.drop-submenu').hasClass('active')){
 			jQuery('.drop-submenu').removeClass('active')
 		}
+
+
 
 	});
 
@@ -44,8 +53,7 @@ jQuery(document).ready(function($) {
 	jQuery(document).click( function (e) {
 
 		if(!jQuery(e.target).is(elShow)){
-			jQuery('.menu-container').removeClass('active');
-			jQuery('.drop-submenu').removeClass('active');
+			jQuery('.menu-container, .drop-submenu, .btn-toggle').removeClass('active');
 			jQuery('section.container-fluid').removeClass('push-menu');
 
 

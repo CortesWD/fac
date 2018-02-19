@@ -32,6 +32,16 @@
 		.icon
 			cuadrado(3rem)
 			
+		&.active
+			.icon
+				background none
+				font-family $icons
+				color $amarillo
+				font-size 2rem
+				font-style normal
+				&::before
+					content "\e014"
+			
 
 .video-js
 	.vjs-big-play-button

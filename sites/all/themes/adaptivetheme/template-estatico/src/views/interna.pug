@@ -79,12 +79,12 @@ block content
 					-for(y=0;y < 3; y ++)
 
 						div.col-sm-2
-							+image('gallery/demo-gallery-thumb.jpg')
+							a(href="images/gallery/demo-gallery-thumb.jpg", title="nombre para mostrar"): +image('gallery/demo-gallery-thumb.jpg')
 							p.nombre Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 							p.division Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 					
 					div.col-sm-2
-							+image('gallery/demo-gallery-thumb.jpg')
+							a(href="images/gallery/demo-gallery-thumb.jpg", title="otro nombre para mostrar"): +image('gallery/demo-gallery-thumb.jpg')
 							p.nombre Grupo
 
 					//- div.clearfix

@@ -55,8 +55,23 @@
 			border-bottom 1px dotted $gris
 		
 		.submenu
-			max-height 80rem
+			max-height 16rem
+			overflow-y scroll
 			opacity 0.999
+			
+			&::-webkit-scrollbar-track
+				background-color $gris
+
+			&::-webkit-scrollbar
+				background-color $azul
+				width 1rem
+
+			&::-webkit-scrollbar-thumb
+				background-color $azul
+				border-radius 1rem
+			
+			a
+				text-transform none
 			
 	.submenu
 		height 100%

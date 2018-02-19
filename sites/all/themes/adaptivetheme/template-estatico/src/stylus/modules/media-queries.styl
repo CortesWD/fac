@@ -3,7 +3,9 @@
 		.tab-content
 			.tab-pane
 				padding 0 4rem
-
+	
+	.menu-container
+		top 7rem
 
 @media (max-width:830px)
 	.container-sys-info
@@ -22,11 +24,23 @@
 	.revista
 		display none
 		
+	.drop-submenu.active .submenu
+		max-height 10rem
+
 	.menu-container
+		background-color #fff
 		box-shadow 5px 0px 5px rgba(0,0,0,0.5) 
-		left -62%
+		left -110%
 		top 10.4rem
-		width 60%
+		width 100%
+		
+		.menu-nav
+			position absolute
+			height 65vh
+			overflow-y scroll
+			width 100%
+			
+
 		
 
 	.container-cierre
@@ -58,39 +72,44 @@
 
 			
 	.container-sys-info
-		display none
-		// .btn-more
-		// 	display none !important
-		// .row
-		// 	position initial
+		border-top 1px solid $gris
+		text-align center
+		.btn-more
+			display none !important
+		.row
+			position initial
 			
-		// 	.lista-iconos
-		// 		box-shadow none
-		// 		padding 4rem 0
+			.lista-iconos
+				box-shadow none
+				padding 4rem 0
 				
-		// 		a
-		// 			border none
-		// 			display block
+				a
+					border none
+					display none
 					
-		// 			img
-		// 				max-width 12rem
-		// 				width 100%
+					img
+						max-width 12rem
+						width 100%
 				
-		// 			&:nth-of-type(1)
-		// 				border-left-color transparent
+					&:nth-of-type(1)
+						border-left-color transparent
+						
+					&.sys-mobile
+						display inline-block
+						vertical-align middle
 					
-		// 	.lista-horizontal
-		// 		box-shadow none
-		// 		min-width auto
-		// 		opacity 0.99
-		// 		display inline
-		// 		position initial 
-		// 		right unset
-		// 		top unset
+			.lista-horizontal
+				box-shadow none
+				min-width auto
+				opacity 0.99
+				display inline
+				position initial 
+				right unset
+				top unset
 				
-		// 		a
-		// 			img
-		// 				display block
+				a
+					img
+						display block
 				
 	.content-cuadro-honor		
 		.counter
@@ -191,10 +210,10 @@
 		max-width 100%
 		
 
-@media (max-width:400px)
-	.menu-container
-		left -82%
-		width 80%
+// @media (max-width:400px)
+// 	.menu-container
+// 		left -82%
+// 		width 80%
 
 
 @media (min-width:1280px)
@@ -237,23 +256,23 @@
 		
 
 
-@media (max-width:$screen-sm) and (max-height:700px)
-	.menu-nav
-		height 100%
-		max-height 45rem
-		overflow-y scroll
+// @media (max-width:$screen-sm) and (max-height:700px)
+// 	.menu-nav
+// 		height 100%
+// 		max-height 40rem
+// 		overflow-y scroll
 		
-		&::-webkit-scrollbar-track
-			background-color $gris
+// 		&::-webkit-scrollbar-track
+// 			background-color $gris
 
-		&::-webkit-scrollbar
-			background-color $azul
-			width 1rem
+// 		&::-webkit-scrollbar
+// 			background-color $azul
+// 			width 1rem
 
-		&::-webkit-scrollbar-thumb
-			background-color $azul
-			border-radius 1rem
+// 		&::-webkit-scrollbar-thumb
+// 			background-color $azul
+// 			border-radius 1rem
 			
-@media (max-width:$screen-sm) and (max-height:400px)
-	.menu-nav
-		max-height 20rem
+// @media (max-width:$screen-sm) and (max-height:400px)
+// 	.menu-nav
+// 		max-height 20rem

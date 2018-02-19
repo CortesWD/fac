@@ -2,8 +2,11 @@
 aside.container-fluid.container-sys-info
 	div.row
 		div.lista-iconos
-			-for(x=0;x < 9; x++)
+			-for(x=0;x < 3; x++)
 				a(href="#", target="_blank"): +image('icons/sial.png', 'uno')
+			
+			-for(x=0;x < 3; x++)
+				a.sys-mobile(href="#", target="_blank"): +image('icons/sial.png', 'uno')
 
 			a.btn-more(href="#", target="_blank")
 				+image('icons/more.png')
