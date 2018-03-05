@@ -116,7 +116,7 @@
         </div>
         <div class="col-sm-4">
           <p class="text-center">
-            Republica de Colombia<br />
+            República de Colombia<br />
             Ministerio de Defensa Nacional
           </p>
         </div>
@@ -187,7 +187,7 @@
       <?php endif; ?>
       <!--/-Destacados-->
       <!--Sidebar-->
-      <div class="col-sm-4">
+      <div class="col-sm-4" style="padding-right: 20px;">
         <?php if ($destacado2 = render($page['destacado2'])): ?>
           <div class="banner">
             <?php print $destacado2; ?>
@@ -229,7 +229,7 @@
         <?php print $destacado5; ?>
       </div>
     <?php endif; ?>
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="padding-right: 20px;">
       <h2 class="title-section title-follow">Síguenos</h2>
       <!--Tabs-->
       <ul class="nav nav-tabs tab-social" role="tablist">
@@ -241,7 +241,7 @@
       <!--Content tabs-->
       <div class="tab-content">
         <div class="tab-pane active" id="instagram" role="tabpanel">
-          Instagram
+          <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/34b2b852d537515fa2c8679965797a3c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
         </div>
         <div class="tab-pane" id="facebook" role="tabpanel">
           <div style="margin:auto;display:block">
